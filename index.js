@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 const express = require('express');
-const {PORT} = require('./utils');
+const { PORT } = require('./utils');
 const expressApp = require('./express-app');
 const database = require('./database');
 
@@ -14,7 +16,7 @@ const StartServer = async () => {
     .on('error', (err) => {
         console.log(err);
         process.exit();
-    })
-}
+    });
+};
 
 StartServer();
