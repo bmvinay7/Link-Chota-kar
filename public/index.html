@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Chota Kar - URL Shortener</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🔗 Link Chota Kar</h1>
+        <p>Shorten your long URLs in seconds</p>
+      </div>
+
+      <div class="card">
+        <form id="urlForm" class="form-group">
+          <div class="input-wrapper">
+            <input
+              type="url"
+              id="urlInput"
+              placeholder="Enter your long URL here..."
+              required
+              autocomplete="off"
+            />
+            <button type="submit" class="btn btn-primary">
+              <span id="btnText">Shorten URL</span>
+              <span id="spinner" class="spinner hidden"></span>
+            </button>
+          </div>
+          <span id="urlError" class="error hidden"></span>
+        </form>
+
+        <div id="resultSection" class="result-section hidden">
+          <div class="result-card">
+            <div class="result-label">Your Shortened URL:</div>
+            <div class="result-url-container">
+              <input type="text" id="shortUrl" class="result-url" readonly />
+              <button id="copyBtn" class="btn btn-secondary">
+                <span id="copyText">📋 Copy</span>
+              </button>
+            </div>
+            <p class="hint">Click the shortened URL to test it:</p>
+            <a id="testLink" href="#" target="_blank" class="test-link"></a>
+          </div>
+
+          <div class="original-url">
+            <strong>Original URL:</strong>
+            <a id="originalUrl" href="#" target="_blank"></a>
+          </div>
+        </div>
+
+        <div id="loadingMessage" class="loading-message hidden">
+          <div class="spinner"></div>
+          <p>Creating your short URL...</p>
+        </div>
+
+        <div id="successMessage" class="message success-message hidden">
+          ✅ URL shortened successfully!
+        </div>
+
+        <div id="errorMessage" class="message error-message hidden">
+          <span id="errorText"></span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h3>How it works:</h3>
+        <ol>
+          <li>Paste any long URL into the input field</li>
+          <li>Click "Shorten URL"</li>
+          <li>Copy your shortened URL and share it</li>
+          <li>Short URLs redirect to the original link</li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
