@@ -6,6 +6,8 @@ const referenceTable = require("./referenceTable");
 const BASE_URL = process.env.BASE_URL || "http://localhost:8000";
 
 module.exports = async (app, db) => {
+  console.log("BASE_URL:", BASE_URL);
+  
   // Middlewares
   app.use(express.json({ limit: "1mb" }));
   app.use(express.urlencoded({ extended: true, limit: "1mb" }));
